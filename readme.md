@@ -10,7 +10,8 @@ This plugin contains one text command names 'itodo' and a syntax definition with
 
 Usage 
 ------------------
-"⌘ + i": new task 
+
+"⌘ + i": new task
 
 "⌘ + d": toggle task completed
 
