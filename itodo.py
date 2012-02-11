@@ -1,17 +1,25 @@
 import sublime, sublime_plugin
 from datetime import datetime 
 
-class ItodoCommand(sublime_plugin.TextCommand):
+class ItodoBase(sublime_plugin.TextCommand):
   def run(self, edit):
-    # only work on .todo files
     filename = self.view.file_name()
     if filename is None or not filename.endswith('.todo'):
-      return False
-    
+      return False  
+    self.runCommand(edit)
+
+class NewCommand(ItodoBase):
+  def runCommand(self, edit):
+    for region in self.view.sel():
+      line = self.view.line(region)
+      line_contents = self.view.substr(line) + '\n- '
+      self.view.replace(edit, line, line_contents)
+
+class CompleteCommand(ItodoBase):
+  def runCommand(self, edit):    
     for region in self.view.sel():
       line = self.view.line(region)
       line_contents = self.view.substr(line).strip()
-
       # prepend @done if item is ongoing
       if line_contents.startswith('-'):
         self.view.insert(edit, line.end(), " @done (%s)" % datetime.now().strftime("%Y-%m-%d %H:%M"))
