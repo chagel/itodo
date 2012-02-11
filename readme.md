@@ -2,11 +2,7 @@ iTodo for Sublime Text
 ------------------
 
 iTodo is a GTD tool for managing todo list in Sublime Text editor.
-
-Description
-------------------
-
-This plugin contains one text command names 'itodo' and a syntax definition with the same name.
+This plugin contains a few text commands and syntax definition for ".todo" files.
 
 
 Installation
