@@ -12,8 +12,14 @@ class NewCommand(ItodoBase):
   def runCommand(self, edit):
     for region in self.view.sel():
       line = self.view.line(region)
-      line_contents = self.view.substr(line) + '\n- '
-      self.view.replace(edit, line, line_contents)
+      # don't add a newline when creating new item with cursor is at an empty line
+      if not line:
+        line_contents = '- '
+        self.view.insert(edit, line.begin(), line_contents)
+      # add a newline when creating new item when cursor is at another line
+      else:
+        line_contents = self.view.substr(line) + '\n- '
+        self.view.replace(edit, line, line_contents)
 
 class CompleteCommand(ItodoBase):
   def runCommand(self, edit):    
