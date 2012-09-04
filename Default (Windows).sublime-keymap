@@ -1,4 +1,5 @@
 [	// iTodo plugin
 	{ "keys": ["ctrl+d"], "command": "complete" },
-	{ "keys": ["ctrl+i"], "command": "new" }
+	{ "keys": ["ctrl+i"], "command": "new" },
+	{ "keys": ["ctrl+l"], "command": "clear" }
 ]
