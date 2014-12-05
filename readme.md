@@ -35,7 +35,7 @@ Highlight this item line and press "⌘ + d", it marks a tag "@done" and also ap
 	Project A:
 		+ call mum tomorrow at 8 am. @done (2012-01-08 18:12)
 
-[iTodo - Sublime Text 2上的GTD插件](http://gchen.cn/2012/01/gtd-with-itodo-in-sublime-text/)
+[iTodo - Sublime Text 2上的GTD插件](http://gchen.cn/blog/2012/01/08/gtd-with-itodo-in-sublime-text/)
 
 Contribution
 ------------------
